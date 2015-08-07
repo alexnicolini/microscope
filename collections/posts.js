@@ -8,6 +8,23 @@ Meteor.methods({
       url: String
     });
 
+
+    if (Meteor.isServer) {
+      Meteor._sleepForMs(5000);
+      postAttributes.title += '(server)';
+      // wait for 5 seconds
+    } else {
+      postAttributes.title += '(client)';
+    }
+
+    var postWithSameLink = Posts.findOne({url: postAttributes.url});
+    if (postWithSameLink) {
+     return {
+       postExists: true,
+       _id: postWithSameLink._id
+     }
+    }    
+
     var user = Meteor.user();
     var post = _.extend(postAttributes, {
       userId: user._id,
