@@ -1,5 +1,5 @@
 Template.commentItem.helpers({
   submittedText: function () {
-    return this.submmited.toString();
+    return this.submitted.toString();
   }
 });

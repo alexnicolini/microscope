@@ -25,7 +25,7 @@ if (Posts.find().count() === 0) {
     postId: telescopeId,
     userId: tom._id,
     author: tom.profile.name,
-    submmited: new Date(now - 5 * 3600 * 1000),
+    submitted: new Date(now - 5 * 3600 * 1000),
     body: 'Interesting project Sacha, can I get involved?'
   });
 
@@ -33,7 +33,7 @@ if (Posts.find().count() === 0) {
     postId: telescopeId,
     userId: sacha._id,
     author: sacha.profile.name,
-    submmited: new Date(now - 3 * 3600 * 1000),
+    submitted: new Date(now - 3 * 3600 * 1000),
     body: 'You sure can Tom!'
   });
 
@@ -42,7 +42,7 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     url: 'http://meteor.com',
-    submmited: new Date(now - 10 * 3600 * 1000),
+    submitted: new Date(now - 10 * 3600 * 1000),
   });
   
   Posts.insert({
@@ -50,6 +50,6 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     url: 'http://themeteorbook.com',
-    submmited: new Date(now - 12 * 3600 * 1000),
+    submitted: new Date(now - 12 * 3600 * 1000),
   });
 }
